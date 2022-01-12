@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 - Bài 3 + Bài 4</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link text-uppercase fw-bold" id="update-tab" data-bs-toggle="tab"
+                    data-bs-target="#update" type="button" role="tab" aria-controls="home" aria-selected="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                        class="bi bi-pencil-square" viewBox="0 0 18 18">
+                        <path
+                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                        <path fill-rule="evenodd"
+                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                    </svg>
+                    Cập nhật
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active text-uppercase fw-bold" id="list-tab" data-bs-toggle="tab"
+                    data-bs-target="#list" type="button" role="tab" aria-controls="list" aria-selected="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-list-ul" viewBox="0 0 18 18">
+                        <path fill-rule="evenodd"
+                            d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                    </svg>
+                    Danh sách
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="update" role="tabpanel" aria-labelledby="update-tab">
+                <div class="card">
+                    <div class="card-header text-uppercase fw-bold fs-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                            class="bi bi-pencil-square" viewBox="0 0 18 18">
+                            <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                        </svg>
+                        Nhập lương tháng 12
+                    </div>
+
+                    <div class="card-body fw-bold">
+                        <form action="">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label for="emp_id">Mã nhân viên</label>
+                                    <input type="text" name="emp_id" id="emp_id" class="form-control">
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <label for="fullname">Họ và tên</label>
+                                    <input type="text" name="fullname" id="fullname" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="mt-2 row">
+                                <div class="col-12 col-md-6">
+                                    <label for="clb">Câu lạc bộ</label>
+                                    <select name="clb" id="clb" class="form-select">
+                                        <option disabled selected>Chọn Câu lạc bộ</option>
+                                        <option value="da_nang">Đà Nẵng</option>
+                                        <option value="ha_noi">Hà Nội</option>
+                                        <option value="hai_duong">Hải Dương</option>
+                                        <option value="hai_phong">Hải Phòng</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <label for="luong">Lương</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">$</span>
+                                        <input type="text" name="luong" id="luong" class="form-control"
+                                            aria-label="Amount (to the nearest dollar)">
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label for="thuong">Thưởng</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">$</span>
+                                        <input type="text" name="thuong" id="thuong" class="form-control"
+                                            aria-label="Amount (to the nearest dollar)">
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="phu_cap">Phụ cấp</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">$</span>
+                                        <input type="text" name="phu_cap" id="phu_cap" class="form-control"
+                                            aria-label="Amount (to the nearest dollar)">
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-1 row">
+                                <label for="ghi_chu">Ghi chú</label>
+                                <div class="col-12">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="mt-3 row">
+                                <div class="">
+                                    <button type="button" class="btn text-dark btn-outline-info">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
+                                            <path
+                                                d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z" />
+                                        </svg>
+                                        Lưu
+                                    </button>
+                                    <button type="button" class="btn text-dark btn-outline-warning">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
+                                            <path
+                                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                            <path
+                                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                        Hủy
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card-footer">Vui lòng nhập thông tin lương cầu thủ</div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+                <div class="card">
+                    <div class="card-header bg-light text-uppercase fw-bold fs-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-list-ul" viewBox="0 0 18 18">
+                            <path fill-rule="evenodd"
+                                d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                        </svg>
+                        Bảng lương tháng 12
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table text-nowrap table-hover table-bordered m-0">
+                                <thead class="text-center table-warning fw-bold" style="vertical-align: middle;">
+                                    <td rowspan="2">MÃ NV</td>
+                                    <td rowspan="2">HỌ VÀ TÊN</td>
+                                    <td colspan="3">THU NHẬP</td>
+                                    <tr>
+                                        <td>LƯƠNG</td>
+                                        <td>THƯỞNG</td>
+                                        <td>PHỤ CẤP</td>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>NV100</td>
+                                        <td>Nguyễn Công Phượng</td>
+                                        <td>5000000</td>
+                                        <td>500000</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NV102</td>
+                                        <td>Phan Văn Tài Em</td>
+                                        <td>9000000</td>
+                                        <td>600000</td>
+                                        <td>100000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NV103</td>
+                                        <td>Nguyễn Công Phượng</td>
+                                        <td>7000000</td>
+                                        <td>300000</td>
+                                        <td>200000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">Lương của cầu thủ và huấn luyện viên chuyên nghiệp</div>
+                </div>
+
+                <div class="mt-2">
+                    <div class="text-center">
+                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Nhập lương tháng 12
+                        </button>
+                    </div>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-light">
+                                    <h5 class="modal-title text-uppercase fs-4" id="exampleModalLabel">Nhập lương tháng
+                                        12
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="">
+                                        <div class="row">
+                                            <div class="col-12 col-md-6">
+                                                <input type="text" name="emp_id" id="emp_id" class="form-control"
+                                                    placeholder="Mã nhân viên">
+                                            </div>
+
+                                            <div class="col-12 col-md-6">
+                                                <input type="text" name="fullname" id="fullname" class="form-control"
+                                                    placeholder="Họ và tên">
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-3 row">
+                                            <div class="col-12 col-md-6">
+                                                <select name="clb" id="clb" class="form-select">
+                                                    <option disabled selected>Chọn Câu lạc bộ</option>
+                                                    <option value="da_nang">Đà Nẵng</option>
+                                                    <option value="ha_noi">Hà Nội</option>
+                                                    <option value="hai_duong">Hải Dương</option>
+                                                    <option value="hai_phong">Hải Phòng</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-12 col-md-6">
+                                                <div class="input-group mb-3">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text" name="luong" id="luong" class="form-control"
+                                                        aria-label="Amount (to the nearest dollar)" placeholder="Lương">
+                                                    <span class="input-group-text">.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-1 row">
+                                            <div class="col-12 col-md-6">
+                                                <div class="input-group mb-3">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text" name="thuong" id="thuong" class="form-control"
+                                                        aria-label="Amount (to the nearest dollar)"
+                                                        placeholder="Thưởng">
+                                                    <span class="input-group-text">.00</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <div class="input-group mb-3">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text" name="phu_cap" id="phu_cap" class="form-control"
+                                                        aria-label="Amount (to the nearest dollar)"
+                                                        placeholder="Phụ cấp">
+                                                    <span class="input-group-text">.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-1 row">
+                                            <div class="col-12">
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                                    placeholder="Ghi chú"></textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer bg-light">
+                                    <button type="button" class="btn text-dark btn-outline-info">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
+                                            <path
+                                                d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z" />
+                                        </svg>
+                                        Lưu
+                                    </button>
+                                    <button type="button" class="btn text-dark btn-outline-warning"
+                                        data-bs-dismiss="modal">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
+                                            <path
+                                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                            <path
+                                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                        Hủy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
