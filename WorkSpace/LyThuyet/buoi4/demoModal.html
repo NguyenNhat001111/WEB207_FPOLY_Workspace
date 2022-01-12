@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Modal</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="">
+                        <div class="mt-2 row">
+                            <label class="col-2" for="fullname">Họ tên</label>
+                            <div class="col-10">
+                                <input type="text" name="fullname" id="fullname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="mt-2 row">
+                            <label class="col-2" for="number">SĐT</label>
+                            <div class="col-10">
+                                <input type="tel" name="number" id="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="mt-2 row">
+                            <label class="col-2" for="email">
+                                Email
+                                <small class="text-danger">*</small>
+                            </label>
+                            <div class="col-10">
+                                <input type="email" name="email" id="email" class="form-control">
+                                <small class="text-danger">Không đúng định dạng mail FPT</small>
+                            </div>
+                        </div>
+                        <div class="mt-2 row">
+                            <label class="col-2" for="password">
+                                Password
+                                <small class="text-danger">*</small>
+                            </label>
+                            <div class="col-10">
+                                <input type="password" name="password" id="password" class="form-control">
+                                <small class="text-danger">Không được để trống</small>
+                            </div>
+                        </div>
+                        <div class="mt-2 row">
+                            <label class="col-2" for="avatar">Ảnh đại diện</label>
+                            <div class="col-10">
+                                <input type="file" name="avatar" id="avatar" class="form-control">
+                            </div>
+                        </div>
+                        <div class="mt-2 row">
+                            <label for="gioi_tinh_nam" class="col-2">
+                                Giới tính
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-10 row">
+                                <div class="form-check col-2">
+                                    <input type="radio" name="gioi_tinh" id="gioi_tinh_nam" class="form-check-input">
+                                    <label for="gioi_tinh_nam">Nam</label>
+                                </div>
+                                <div class="form-check col-2">
+                                    <input type="radio" name="gioi_tinh" id="gioi_tinh_nu" class="form-check-input">
+                                    <label for="gioi_tinh_nu">Nữ</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 row">
+                            <label for="chuyen_nganh" class="col-2">
+                                Chuyên ngành
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-10">
+                                <select name="chuyen_nganh[]" multiple id="chuyen_nganh" class="form-select">
+                                    <option disabled selected>Chọn chuyên ngành</option>
+                                    <option value="udpm">Ứng dụng phần mềm</option>
+                                    <option value="tkw">Thiết kế trang web</option>
+                                    <option value="ltmt">Lập trình máy tính</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

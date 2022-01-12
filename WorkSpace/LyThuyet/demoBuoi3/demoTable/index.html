@@ -86,6 +86,108 @@
             <article class="col-12 col-md-9 pt-3 pb-3">
                 <div class="container">
                     <div class="row">
+                        <div class="mb-2">
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal_them_moi">Thêm
+                                mới</button>
+                            <div class="modal fade" id="modal_them_moi" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <form action="" method="">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Thêm mới</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="mt-2 row">
+                                                    <label class="col-2" for="fullname">Họ tên</label>
+                                                    <div class="col-10">
+                                                        <input type="text" name="fullname" id="fullname"
+                                                            class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 row">
+                                                    <label class="col-2" for="number">SĐT</label>
+                                                    <div class="col-10">
+                                                        <input type="tel" name="number" id="number"
+                                                            class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 row">
+                                                    <label class="col-2" for="email">
+                                                        Email
+                                                        <small class="text-danger">*</small>
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <input type="email" name="email" id="email"
+                                                            class="form-control">
+                                                        <small class="text-danger">Không đúng định dạng mail FPT</small>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 row">
+                                                    <label class="col-2" for="password">
+                                                        Password
+                                                        <small class="text-danger">*</small>
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <input type="password" name="password" id="password"
+                                                            class="form-control">
+                                                        <small class="text-danger">Không được để trống</small>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 row">
+                                                    <label class="col-2" for="avatar">Ảnh đại diện</label>
+                                                    <div class="col-10">
+                                                        <input type="file" name="avatar" id="avatar"
+                                                            class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 row">
+                                                    <label for="gioi_tinh_nam" class="col-2">
+                                                        Giới tính
+                                                        <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-10 row">
+                                                        <div class="form-check col-2">
+                                                            <input type="radio" name="gioi_tinh" id="gioi_tinh_nam"
+                                                                class="form-check-input">
+                                                            <label for="gioi_tinh_nam">Nam</label>
+                                                        </div>
+                                                        <div class="form-check col-2">
+                                                            <input type="radio" name="gioi_tinh" id="gioi_tinh_nu"
+                                                                class="form-check-input">
+                                                            <label for="gioi_tinh_nu">Nữ</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 row">
+                                                    <label for="chuyen_nganh" class="col-2">
+                                                        Chuyên ngành
+                                                        <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <select name="chuyen_nganh[]" multiple id="chuyen_nganh"
+                                                            class="form-select">
+                                                            <option disabled selected>Chọn chuyên ngành</option>
+                                                            <option value="udpm">Ứng dụng phần mềm</option>
+                                                            <option value="tkw">Thiết kế trang web</option>
+                                                            <option value="ltmt">Lập trình máy tính</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Đóng</button>
+                                                <button type="button" class="btn btn-primary">Lưu bản ghi mới</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="table-responsive">
                             <table class="table text-nowrap table-light table-striped table-hover table-bordered">
                                 <thead>
@@ -137,8 +239,6 @@
                                 </tbody>
                             </table>
                         </div>
-
-
                     </div>
                 </div>
             </article>
