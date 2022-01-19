@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body ng-app="random_work">
+    <div ng-controller="my_controller">
+        <span>A</span>
+        <input type="text" ng-model="a">
+        <span>B</span>
+        <input type="text" ng-model="b">
+        <button ng-click="sum()">Tổng</button>
+        <input type="text" ng-model="gay">
+    </div>
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        const app = angular.module("random_work", []);
+
+        const myFunc = function ($scope) {
+            $scope.a = 0;
+            $scope.b = 0;
+            $scope.gay = 0;
+            $scope.sum = function () {
+                $scope.gay = Number($scope.a) + Number($scope.b);
+            };
+        }
+
+        app.controller("my_controller", myFunc);
+    </script>
+</body>
+
+</html>

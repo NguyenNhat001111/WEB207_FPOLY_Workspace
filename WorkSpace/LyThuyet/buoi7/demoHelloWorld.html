@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World - AngularJS</title>
+</head>
+<body ng-app="demo_hello_world">
+    <div ng-controller = "my_controller">
+        <h1>{{ message }}</h1>
+    </div>
+    
+    <script src="js/angular.min.js"></script>
+    <script>
+        // B1: Tạo Ứng dụng Angular
+        const app = angular.module("demo_hello_world", []);
+
+        // B2: Khai báo phạm vi hoạt động của UD AngularJs: ng-app (khai báo trong thẻ body)
+        // B3: Tạo controller
+        function myController($scope) {
+            $scope.message = "Hello World";
+        }
+
+        // B4: Khai báo controller với UD AngularJs
+        app.controller("my_controller", myController);
+        console.log("gay");
+    </script>
+</body>
+</html>
