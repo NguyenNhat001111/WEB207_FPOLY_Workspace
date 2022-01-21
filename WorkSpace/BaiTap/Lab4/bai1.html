@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1 - Lab 4</title>
+</head>
+<body ng-app="bai1_lab4_app">
+    <div ng-controller="my_controller">
+        <img src="images/{{ photo }}" alt="randomPic" height="200" width="200">
+        <ul>
+            <li>Họ và tên: {{ name }}</li>
+            <li>Ngày sinh: {{ birthdate }}</li>
+            <li>Giới tính: {{ gender }}</li>
+            <li>Điểm: {{ avgMark }}</li>
+        </ul>
+    </div>
+    
+    <script src="js/angular.min.js"></script>
+    <script>
+        const app = angular.module("bai1_lab4_app", []);
+
+        const myFunc = function ($scope) {
+            $scope.name = "Nguyễn Minh Nhật";
+            $scope.birthdate = "01-01-1997";
+            $scope.gender = "Nam";
+            $scope.photo = "sanic.png";
+            $scope.avgMark = "5.5";
+        }
+
+        app.controller("my_controller", myFunc);
+    </script>
+</body>
+</html>
