@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab4 - Bài4</title>
+
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="bai4_app">
+
+    <div ng-controller="myController" class="container">
+        <div class="row">
+            <form>
+                <div class="col-12 card mt-2">
+                    <div class="card-header">
+                        <h3 style="font-weight: bold;">Hình chữ nhật</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="chieuDai" class="form-label fw-bold">Chiều Dài</label>
+                            <input type="number" class="form-control" id="chieuDai" ng-model="dai">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="chieuRong" class="form-label fw-bold">Chiều Rộng</label>
+                            <input type="number" class="form-control" id="chieuRong" ng-model="rong">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="chuVi" class="form-label fw-bold">Chu Vi</label>
+                            <input type="number" class="form-control" id="chuVi" disabled ng-model="chuVi">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="dienTich" class="form-label fw-bold">Dien Tich</label>
+                            <input type="number" class="form-control" id="dienTich" disabled ng-model="dienTich">
+                        </div>
+                    </div>
+
+                    <div class="card-footer text-center">
+                        <button class="btn btn-primary col-2 m-1 fs-5" ng-click="calc()">Tính</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JS Bootstrap -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- AngularJS -->
+    <script src="js/angular.min.js"></script>
+    <script>
+        const app = angular.module("bai4_app", []);
+
+        const myFunc = function ($scope) {
+            $scope.dai = 0;
+            $scope.rong = 0;
+            $scope.calc = function () {
+                $scope.chuVi = (Number($scope.dai) + Number($scope.rong)) * 2;
+                $scope.dienTich = Number($scope.dai) * Number($scope.rong);
+            }
+        };
+
+        app.controller("myController", myFunc);
+    </script>
+</body>
+
+</html>
