@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Demo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="demo_filter">
+    <div class="container" ng-controller="my_controller">
+        <h2>{{ my_number }}</h2>
+        <h2>{{ my_number | number : 4 }}</h2>
+        <h2>{{ my_number | currency : 'VNĐ' : 2 }}</h2><br>
+
+        <h2>{{ now }}</h2>
+        <h2>{{ now | date : 'dd/MM/yyyy HH:mm:ss' : '+07'}}</h2><br>
+
+        <h2>{{ name | uppercase }}</h2>
+        <h2>{{ name | lowercase }}</h2>
+        <h2>{{ sv | json }}</h2><br>
+
+        <div class="fs-4">
+            <ul>
+                <li ng-repeat="item in arr | limitTo : 3 : 1">
+                    {{ item.ma }} - {{ item.ten }}
+                </li>
+            </ul>
+            <ul>
+                <li ng-repeat="item in arr | orderBy: 'ma' ">
+                    {{ item.ma }} - {{ item.ten }}
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script>
+        const app = angular.module("demo_filter", []);
+
+        function myController($scope) {
+            $scope.my_number = 123456789.987654321;
+            $scope.now = new Date();
+            $scope.name = "FPT Polytechnic";
+            $scope.sv = {
+                name: "Ng Van A",
+                chuyen_nganh: "UDPM",
+                gioi_tinh: 1
+            };
+            $scope.arr = [
+                { ma: 'WEB207', ten: "Frontend Frameworks" }, // 0
+                { ma: 'SOF2041', ten: "Du an mau" }, // 1
+                { ma: 'MOB1014', ten: "Lap trinh Java 1" }, // 2
+                { ma: 'COM108', ten: "Nhap mon lap trinh" }, // 3
+                { ma: 'SOF203', ten: "Lap trinh Java 3" }, // 4
+                { ma: 'MOB1023', ten: "Lap trinh Java 2" },  // 5
+            ];
+        }
+
+        app.controller("my_controller", myController);
+    </script>
+</body>
+
+</html>

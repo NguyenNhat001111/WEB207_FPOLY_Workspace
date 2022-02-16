@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Service AngularJS</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="demo_service">
+    <div class="container" ng-controller="my_controller">
+        <form>
+            <div class="col-12 mb-3 mt-2">
+                <label for="hoten" class="form-label fw-bold">Họ và tên</label>
+                <input ng-model="student.name" type="text" class="form-control" id="hoten" name="hoten">
+            </div>
+
+            <div class="col-12 mb-3">
+                <label for="bd" class="form-label fw-bold">Mã sinh viên</label>
+                <input ng-model="student.code" type="text" class="form-control" id="bd" name="bd">
+            </div>
+
+            <div class="col-12 mb-4">
+                <label for="diem" class="form-label fw-bold">Chuyên ngành</label>
+                <input ng-model="student.chuyen_nganh" type="text" class="form-control" id="diem" name="diem">
+            </div>
+
+            <div class="col-12 mb-3">
+                <button class="btn btn-outline-dark">Lưu</button>
+                <button class="btn btn-outline-dark">Xóa form</button>
+            </div>
+        </form>
+
+        <hr class="mt-4 mb-4">
+
+        <table class="table table-bordered">
+            <thead>
+                <th>ID</th>
+                <th>Họ tên</th>
+                <th>Mã SV</th>
+                <th>Chuyên ngành</th>
+                <th colspan="2">Thao tác</th>
+            </thead>
+            <tr ng-repeat="stu in students">
+                <td>{{ stu.id }}</td>
+                <td>{{ stu.name }}</td>
+                <td>{{ stu.code }}</td>
+                <td>{{ stu.chuyen_nganh }}</td>
+                <td>
+                    <a class="btn btn-primary">Sửa</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger">Xóa</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        const app = angular.module("demo_service", []);
+
+        const myController = function ($scope, $http) {
+            $scope.students = [];
+
+            const api = 'https://620b061fbeee430017f38481.mockapi.io/students';
+            $http.get(api) //Gửi request dạng GET lên API
+                .then(function (response) {
+                    // console.log(response);
+                    $scope.students = response.data;
+                });
+
+        }
+
+        app.controller("my_controller", myController);
+
+    </script>
+</body>
+
+</html>
